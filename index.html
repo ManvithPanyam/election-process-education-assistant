@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="VoteReady — An interactive guide helping first-time voters understand India's election process step by step.">
+  <meta name="keywords" content="election, voting, India, first-time voter, election process, voter registration, democracy">
+  <meta name="author" content="VoteReady Team">
+  <title>VoteReady — Your Election Guide</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Progress Bar -->
+  <div class="progress-bar" id="progressBar" aria-hidden="true">
+    <div class="progress-fill" id="progressFill"></div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#" class="nav-logo" aria-label="VoteReady Home">
+        <span class="logo-icon">🗳️</span>
+        <span class="logo-text">VoteReady</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#how-it-works">How It Works</a></li>
+        <li><a href="#readiness">Am I Ready?</a></li>
+        <li><a href="#assistant">Quick Answers</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#glossary">Key Terms</a></li>
+      </ul>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" title="Toggle dark/light mode">
+        <span class="theme-icon">🌙</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero Section — One clear path -->
+  <header class="hero" id="hero">
+    <div class="hero-content">
+      <span class="hero-badge">🇮🇳 India Election Education Guide</span>
+      <h1 class="hero-title">Understand Elections.<br><span class="highlight">Vote with Confidence.</span></h1>
+      <p class="hero-subtitle">A step-by-step guide to India's election process — built for first-time voters, students, and every curious citizen.</p>
+      <div class="hero-cta">
+        <a href="#how-it-works" class="btn btn-primary" id="heroStartBtn">Start the Election Journey →</a>
+        <a href="#assistant" class="btn btn-secondary">I Have a Quick Question</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Start Here — Quick Path -->
+  <section class="section start-here-section" id="start-here">
+    <div class="container">
+      <div class="start-here-grid">
+        <a href="#how-it-works" class="path-card">
+          <span class="path-icon">🗺️</span>
+          <h3>Learn the Process</h3>
+          <p>Follow the 6 stages of an election from registration to results.</p>
+        </a>
+        <a href="#readiness" class="path-card">
+          <span class="path-icon">✅</span>
+          <h3>Check If I'm Ready</h3>
+          <p>A quick checklist to make sure you're prepared for election day.</p>
+        </a>
+        <a href="#assistant" class="path-card">
+          <span class="path-icon">💬</span>
+          <h3>Ask a Question</h3>
+          <p>Get clear answers to common doubts about voting and elections.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Election Journey Timeline -->
+  <section class="section journey-section" id="how-it-works">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Step by Step</span>
+        <h2>How the Election Process Works</h2>
+        <p class="section-desc">Follow the complete journey from start to finish. Click any stage to learn more.</p>
+      </div>
+
+      <!-- Stepper Navigation -->
+      <div class="stepper" role="tablist" aria-label="Election process stages">
+        <button class="step-btn active" role="tab" aria-selected="true" data-step="0" id="stepTab0" aria-controls="stepPanel0">
+          <span class="step-number">1</span>
+          <span class="step-label">Registration</span>
+        </button>
+        <div class="step-connector"></div>
+        <button class="step-btn" role="tab" aria-selected="false" data-step="1" id="stepTab1" aria-controls="stepPanel1">
+          <span class="step-number">2</span>
+          <span class="step-label">Nominations</span>
+        </button>
+        <div class="step-connector"></div>
+        <button class="step-btn" role="tab" aria-selected="false" data-step="2" id="stepTab2" aria-controls="stepPanel2">
+          <span class="step-number">3</span>
+          <span class="step-label">Campaigning</span>
+        </button>
+        <div class="step-connector"></div>
+        <button class="step-btn" role="tab" aria-selected="false" data-step="3" id="stepTab3" aria-controls="stepPanel3">
+          <span class="step-number">4</span>
+          <span class="step-label">Polling Day</span>
+        </button>
+        <div class="step-connector"></div>
+        <button class="step-btn" role="tab" aria-selected="false" data-step="4" id="stepTab4" aria-controls="stepPanel4">
+          <span class="step-number">5</span>
+          <span class="step-label">Counting</span>
+        </button>
+        <div class="step-connector"></div>
+        <button class="step-btn" role="tab" aria-selected="false" data-step="5" id="stepTab5" aria-controls="stepPanel5">
+          <span class="step-number">6</span>
+          <span class="step-label">Results</span>
+        </button>
+      </div>
+
+      <!-- Step Content Panels -->
+      <div class="step-panels">
+        <div class="step-panel active" role="tabpanel" id="stepPanel0" aria-labelledby="stepTab0">
+          <div class="panel-icon">📝</div>
+          <h3>Voter Registration</h3>
+          <p>Your name must appear on the <strong>electoral roll</strong> before you can vote.</p>
+          <div class="panel-details">
+            <div class="detail-item">
+              <span class="detail-icon">✅</span>
+              <div>
+                <strong>Who can register?</strong>
+                <p>Any Indian citizen aged 18 or older on January 1 of the qualifying year.</p>
+              </div>
+            </div>
+            <div class="detail-item">
+              <span class="detail-icon">📄</span>
+              <div>
+                <strong>How to register</strong>
+                <p>Fill Form 6 online at the NVSP portal or at your nearest Electoral Registration Office.</p>
+              </div>
+            </div>
+            <div class="detail-item">
+              <span class="detail-icon">🪪</span>
+              <div>
+                <strong>What you receive</strong>
+                <p>Your EPIC (Voter ID card) — your official identity as a registered voter.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="step-panel" role="tabpanel" id="stepPanel1" aria-labelledby="stepTab1">
+          <div class="panel-icon">🎖️</div>
+          <h3>Candidate Nominations</h3>
+          <p>Candidates file <strong>nomination papers</strong> with the Returning Officer to officially enter the contest.</p>
+          <div class="panel-details">
+            <div class="detail-item">
+              <span class="detail-icon">📋</span>
+              <div>
+                <strong>Filing</strong>
+                <p>Candidates submit forms, a security deposit, and proof of eligibility before the deadline.</p>
+              </div>
+            </div>
+            <div class="detail-item">
+              <span class="detail-icon">🔍</span>
+              <div>
+                <strong>Scrutiny</strong>
+                <p>The Returning Officer verifies all nominations meet eligibility requirements.</p>
+              </div>
+            </div>
+            <div class="detail-item">
+              <span class="detail-icon">🔙</span>
+              <div>
+                <strong>Withdrawal</strong>
+                <p>Candidates get a final window to withdraw before the contest is finalized.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="step-panel" role="tabpanel" id="stepPanel2" aria-labelledby="stepTab2">
+          <div class="panel-icon">📢</div>
+          <h3>Campaign Period</h3>
+          <p>Parties share their <strong>manifesto</strong> and reach out to voters under strict Election Commission rules.</p>
+          <div class="panel-details">
+            <div class="detail-item">
+              <span class="detail-icon">📣</span>
+              <div>
+                <strong>Campaign activities</strong>
+                <p>Rallies, advertisements, pamphlets, and door-to-door outreach to seek votes.</p>
+              </div>
+            </div>
+            <div class="detail-item">
+              <span class="detail-icon">⏰</span>
+              <div>
+                <strong>Silence period</strong>
+                <p>All campaigning stops 48 hours before polling. This lets voters reflect without pressure.</p>
+              </div>
+            </div>
+            <div class="detail-item">
+              <span class="detail-icon">📜</span>
+              <div>
+                <strong>Model Code of Conduct</strong>
+                <p>No hate speech, bribery, or misuse of government resources during elections.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="step-panel" role="tabpanel" id="stepPanel3" aria-labelledby="stepTab3">
+          <div class="panel-icon">🗳️</div>
+          <h3>Polling Day</h3>
+          <p>The day you cast your vote using an <strong>Electronic Voting Machine (EVM)</strong>.</p>
+          <div class="panel-details">
+            <div class="detail-item">
+              <span class="detail-icon">🏫</span>
+              <div>
+                <strong>At the polling booth</strong>
+                <p>Your name must appear on the voter list (electoral roll) to vote. Carry your Voter ID or any approved photo ID for identity verification.</p>
+              </div>
+            </div>
+            <div class="detail-item">
+              <span class="detail-icon">👆</span>
+              <div>
+                <strong>Casting your vote</strong>
+                <p>Press the button next to your chosen candidate. The VVPAT slip confirms your choice.</p>
+              </div>
+            </div>
+            <div class="detail-item">
+              <span class="detail-icon">💜</span>
+              <div>
+                <strong>The ink mark</strong>
+                <p>Indelible ink on your left index finger prevents double voting. It's a badge of participation!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="step-panel" role="tabpanel" id="stepPanel4" aria-labelledby="stepTab4">
+          <div class="panel-icon">🔢</div>
+          <h3>Vote Counting</h3>
+          <p>After polling ends, sealed EVMs are opened on <strong>counting day</strong> under strict supervision.</p>
+          <div class="panel-details">
+            <div class="detail-item">
+              <span class="detail-icon">🏢</span>
+              <div>
+                <strong>Counting centers</strong>
+                <p>Votes are tallied round by round, each covering a set of polling stations.</p>
+              </div>
+            </div>
+            <div class="detail-item">
+              <span class="detail-icon">👁️</span>
+              <div>
+                <strong>Transparency</strong>
+                <p>Candidate agents observe the process. VVPAT slips are cross-verified from random booths.</p>
+              </div>
+            </div>
+            <div class="detail-item">
+              <span class="detail-icon">📊</span>
+              <div>
+                <strong>Live trends</strong>
+                <p>Results are shared publicly in real time as counting progresses.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="step-panel" role="tabpanel" id="stepPanel5" aria-labelledby="stepTab5">
+          <div class="panel-icon">🏆</div>
+          <h3>Result Declaration</h3>
+          <p>The candidate with the <strong>most votes</strong> in each constituency wins the seat.</p>
+          <div class="panel-details">
+            <div class="detail-item">
+              <span class="detail-icon">🎉</span>
+              <div>
+                <strong>Winner declared</strong>
+                <p>The Returning Officer announces results. They are published on the ECI website.</p>
+              </div>
+            </div>
+            <div class="detail-item">
+              <span class="detail-icon">🏛️</span>
+              <div>
+                <strong>Government formation</strong>
+                <p>The majority party or coalition forms the government and selects its leader.</p>
+              </div>
+            </div>
+            <div class="detail-item">
+              <span class="detail-icon">⚖️</span>
+              <div>
+                <strong>Challenging results</strong>
+                <p>Candidates can file an election petition in the High Court if irregularities are suspected.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="step-nav">
+        <button class="btn btn-outline" id="stepPrev" disabled>← Previous</button>
+        <span class="step-indicator" id="stepIndicator">Step 1 of 6</span>
+        <button class="btn btn-primary" id="stepNext">Next →</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Voter Readiness Checklist -->
+  <section class="section readiness-section" id="readiness">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Self-Check</span>
+        <h2>Am I Ready to Vote?</h2>
+        <p class="section-desc">Tick off each item to make sure you're prepared for election day.</p>
+      </div>
+      <div class="checklist-container">
+        <div class="checklist-progress">
+          <div class="checklist-progress-bar" id="checklistProgressBar"></div>
+          <span class="checklist-progress-text" id="checklistProgressText">0 of 8 completed</span>
+        </div>
+        <ul class="checklist" id="readinessChecklist">
+          <li class="checklist-item"><label><input type="checkbox" aria-label="I am 18 years or older"><span class="checkmark"></span><span class="checklist-text">I am 18 years or older (on Jan 1 of the qualifying year)</span></label></li>
+          <li class="checklist-item"><label><input type="checkbox" aria-label="I am an Indian citizen"><span class="checkmark"></span><span class="checklist-text">I am an Indian citizen</span></label></li>
+          <li class="checklist-item"><label><input type="checkbox" aria-label="I have registered via Form 6"><span class="checkmark"></span><span class="checklist-text">I have registered as a voter (Form 6 at nvsp.in or ERO office)</span></label></li>
+          <li class="checklist-item"><label><input type="checkbox" aria-label="My name is on the voter list"><span class="checkmark"></span><span class="checklist-text">My name appears on the voter list / electoral roll (check at nvsp.in)</span></label></li>
+          <li class="checklist-item"><label><input type="checkbox" aria-label="I have my Voter ID or approved photo ID"><span class="checkmark"></span><span class="checklist-text">I have my Voter ID (EPIC) or an approved photo ID</span></label></li>
+          <li class="checklist-item"><label><input type="checkbox" aria-label="I know my polling station"><span class="checkmark"></span><span class="checklist-text">I know my assigned polling station (check via Voter Helpline app or 1950)</span></label></li>
+          <li class="checklist-item"><label><input type="checkbox" aria-label="I know the candidates"><span class="checkmark"></span><span class="checklist-text">I know who the candidates are in my constituency</span></label></li>
+          <li class="checklist-item"><label><input type="checkbox" aria-label="I know how to use the EVM"><span class="checkmark"></span><span class="checklist-text">I understand how to use the EVM to cast my vote</span></label></li>
+        </ul>
+        <div class="checklist-result" id="checklistResult">
+          <div class="result-icon">🎉</div>
+          <p class="result-text">You're ready to vote! Head to your polling station with confidence.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Chat Assistant -->
+  <section class="section assistant-section" id="assistant">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Quick Answers</span>
+        <h2>Ask Your Election Guide</h2>
+        <p class="section-desc">Tap a question to get a clear, simple answer.</p>
+      </div>
+      <div class="chat-container">
+        <div class="chat-messages" id="chatMessages" aria-live="polite" aria-label="Chat messages">
+          <div class="chat-message bot">
+            <div class="message-avatar">🗳️</div>
+            <div class="message-bubble">
+              <p>Hi! I'm your Election Guide. Tap any question below to get started.</p>
+            </div>
+          </div>
+        </div>
+        <div class="chat-prompts" id="chatPrompts">
+          <button class="prompt-btn" data-prompt="register">How do I register to vote?</button>
+          <button class="prompt-btn" data-prompt="electionday">What happens on election day?</button>
+          <button class="prompt-btn" data-prompt="carry">What should I carry to the booth?</button>
+          <button class="prompt-btn" data-prompt="counting">How are votes counted?</button>
+          <button class="prompt-btn" data-prompt="firsttime">First-time voter tips</button>
+          <button class="prompt-btn" data-prompt="evm">How does the EVM work?</button>
+          <button class="prompt-btn" data-prompt="nota">What is NOTA?</button>
+          <button class="prompt-btn" data-prompt="missing">Name missing from voter list?</button>
+        </div>
+        <div class="chat-input-area">
+          <label for="chatSearchInput" class="sr-only">Search for a question</label>
+          <input type="text" id="chatSearchInput" placeholder="Type a keyword to search..." autocomplete="off">
+          <button class="btn btn-primary chat-search-btn" id="chatSearchBtn" aria-label="Search">🔍</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="section faq-section" id="faq">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Common Questions</span>
+        <h2>Frequently Asked Questions</h2>
+        <p class="section-desc">Quick answers to the most common voter questions.</p>
+      </div>
+      <div class="faq-search">
+        <label for="faqSearchInput" class="sr-only">Search FAQs</label>
+        <input type="text" id="faqSearchInput" placeholder="Search FAQs..." autocomplete="off">
+      </div>
+      <div class="accordion" id="faqAccordion"></div>
+      <p class="faq-empty-state" id="faqEmpty" hidden>No matching questions found. Try a different search term.</p>
+    </div>
+  </section>
+
+  <!-- Myth vs Fact -->
+  <section class="section myths-section" id="myths">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Know the Truth</span>
+        <h2>Myths vs Facts</h2>
+        <p class="section-desc">Common misconceptions about elections — and the truth.</p>
+      </div>
+      <div class="myth-cards" id="mythCards"></div>
+    </div>
+  </section>
+
+  <!-- Glossary -->
+  <section class="section glossary-section" id="glossary">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Key Terms</span>
+        <h2>Election Glossary</h2>
+        <p class="section-desc">Simple definitions of election words you'll hear.</p>
+      </div>
+      <div class="glossary-search">
+        <label for="glossarySearchInput" class="sr-only">Search glossary</label>
+        <input type="text" id="glossarySearchInput" placeholder="Search terms..." autocomplete="off">
+      </div>
+      <div class="glossary-grid" id="glossaryGrid"></div>
+      <p class="glossary-empty-state" id="glossaryEmpty" hidden>No matching terms found.</p>
+    </div>
+  </section>
+
+  <!-- Official Sources — Trust Block -->
+  <section class="section sources-section" id="sources">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Verify & Trust</span>
+        <h2>Official Sources</h2>
+        <p class="section-desc">This is an educational guide. Always verify details from official sources.</p>
+      </div>
+      <div class="sources-grid">
+        <a href="https://www.eci.gov.in" target="_blank" rel="noopener noreferrer" class="source-card">
+          <span class="source-icon">🏛️</span>
+          <strong>Election Commission of India</strong>
+          <span class="source-url">eci.gov.in</span>
+        </a>
+        <a href="https://www.nvsp.in" target="_blank" rel="noopener noreferrer" class="source-card">
+          <span class="source-icon">📋</span>
+          <strong>National Voters' Service Portal</strong>
+          <span class="source-url">nvsp.in</span>
+        </a>
+        <a href="https://ecisveep.nic.in" target="_blank" rel="noopener noreferrer" class="source-card">
+          <span class="source-icon">📢</span>
+          <strong>SVEEP — Voter Education</strong>
+          <span class="source-url">ecisveep.nic.in</span>
+        </a>
+        <div class="source-card source-helpline">
+          <span class="source-icon">📞</span>
+          <strong>Voter Helpline</strong>
+          <span class="source-url">Call 1950 (toll-free)</span>
+        </div>
+      </div>
+      <p class="sources-disclaimer">VoteReady is an independent educational project. Content is simplified for learning purposes and does not constitute legal advice. For official election rules, visit the links above.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <span class="logo-icon">🗳️</span>
+          <span class="logo-text">VoteReady</span>
+          <p class="footer-tagline">Making democracy accessible, one voter at a time.</p>
+        </div>
+        <div class="footer-links">
+          <a href="#how-it-works">How It Works</a>
+          <a href="#readiness">Am I Ready?</a>
+          <a href="#assistant">Quick Answers</a>
+          <a href="#faq">FAQ</a>
+          <a href="#glossary">Key Terms</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 VoteReady — Open source educational project.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top" title="Back to top">↑</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
